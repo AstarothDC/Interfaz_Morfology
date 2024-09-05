@@ -12,6 +12,7 @@ venv
 models/
 build/
 dist/
+*.exe
 
 
 # Exclude Python bytecode
