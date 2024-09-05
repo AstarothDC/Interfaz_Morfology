@@ -1,0 +1,39 @@
+# Exclude virtual environment directory
+venv/
+env/
+ENV/
+venv
+./venv
+.venv/
+.VENV/
+./models
+./build
+./dist
+models/
+build/
+dist/
+
+
+# Exclude Python bytecode
+__pycache__/
+*.py[cod]
+
+# Exclude database files
+*.sqlite3
+*.sql
+
+# Exclude editor specific files
+.vscode/
+.idea/
+
+# Exclude environment variable files
+.env
+*.env
+
+# Exclude OS generated files
+.DS_Store
+Thumbs.db
+
+# Exclude log files
+*.log
+s
