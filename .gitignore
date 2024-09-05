@@ -9,7 +9,7 @@ venv
 ./models
 ./build
 ./dist
-models/
+models/*.pt
 build/
 dist/
 *.exe
