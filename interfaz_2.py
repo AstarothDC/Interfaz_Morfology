@@ -5,6 +5,7 @@ from PyQt6 import QtCore, QtWidgets
 from PyQt6.QtCore import QPropertyAnimation, Qt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import sys
+import multiprocessing
 from PyQt6.uic import loadUi
 #import recursos
 import cv2
@@ -143,8 +144,6 @@ class mainUI(QMainWindow):
                         self.tabla_d2_2.insertRow(self.tabla_d2_2.rowCount())
 
                     for i, (plant, hojas) in enumerate(zip(plant_id, count)):
-
-                        print(f"Asignando en fila {i}: Planta {plant}, Hojas {hojas}")
                             
                             # Asignar los valores a las dos columnas existentes
                         #self.tabla_d2_2.setItem(i, 0, QTableWidgetItem(str(plant)))  # Columna 'Planta'
@@ -189,7 +188,6 @@ class mainUI(QMainWindow):
 
                 # Obtén el frame anotado de los resultados
                 annotated_frame = results['results'][0].plot()
-                print(results)
 
                 # Convertir el resultado (annotated_frame) para mostrarlo en el QLabel
                 annotated_frame = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB)  # Asegurarse que esté en RGB
@@ -235,16 +233,11 @@ class mainUI(QMainWindow):
 
     
     
-    
-
-
-
-
-
         
 
 if __name__ == '__main__':
+    multiprocessing.freeze_support()
     app = QApplication(sys.argv)
     ui = mainUI()
     ui.show()
-    app.exec()
+    sys.exit(app.exec())
