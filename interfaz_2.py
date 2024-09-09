@@ -135,11 +135,7 @@ class mainUI(QMainWindow):
                 
                 for re in results.get("list_direc"):
                     plant_id.append(re.get("id"))
-                    count.append(re.get("count_leafl"))
-                    
-                print(results.get("list_direc"))
-                print("IDs de Plantas:", plant_id)
-                print("Número de Hojas:", count)
+                    count.append(re.get("count_leafl"))                    
 
                 if plant_id and count:
 
